@@ -25,7 +25,7 @@ const Search = () => {
   return (
     <div className="mt-5 flex font-normal mx-5">
         <input 
-        className="bg-gray-50 border outline-none border-grey-300 text-black text-sm w-full indent-2 p-2.5 outline:none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl" 
+        className="bg-gray-50 border outline-none border-grey-300 text-black text-sm w-full h-1/2 indent-2 p-2.5 outline:none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl" 
         type="search" 
         placeholder="Seach Here..."
         value={searchValue}
@@ -35,7 +35,7 @@ const Search = () => {
         <button
         disabled={!searchValue}
         onClick={handleButtonSearch}
-        className="bg-blue-600 px-6 py-2.5 text-lg text-white rounded-tr rounded-br focus:ring-2 focus:ring-blue-300 disabled:bg-gray-400"
+        className="bg-blue-600 px-6 py-1.5 text-lg text-white rounded-tr rounded-br focus:ring-2 focus:ring-blue-300 disabled:bg-gray-400"
         >Search</button>
 
     </div>  
