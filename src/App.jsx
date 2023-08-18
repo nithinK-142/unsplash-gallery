@@ -3,6 +3,7 @@ import Images from "./components/Images";
 import NavBar from "./components/NavBar";
 import Search from "./components/Search";
 import useAxios from "./hooks/useAxios";
+import Footer from "./components/Footer";
 
 export const ImageContext = createContext();
 
@@ -19,12 +20,15 @@ function App() {
     setSearchText
   }
   return (
-  <ImageContext.Provider value={value}>
-    <NavBar>
-      <Search/>
-    </NavBar>
-    <Images/>
-  </ImageContext.Provider>
+  <>
+    <ImageContext.Provider value={value}>
+      <NavBar>
+        <Search/>
+      </NavBar>
+      <Images/>
+    </ImageContext.Provider>
+    <Footer />
+  </>
   );
 }
 
