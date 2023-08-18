@@ -63,6 +63,25 @@ const ImageSlider = ({ currentId, handleImageClick }) => {
     window.open(currentImage, "_blank");
   };
 
+  const handleKeyPressed = (e) => {
+    if (e.keyCode === 37) {
+      handlePreviousImage();
+    }
+    if (e.keyCode === 39) {
+      handleNextImage();
+    }
+    if (e.keyCode === 27) {
+      handleImageClick();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyPressed);
+    return () => {
+      document.removeEventListener('keydown', handleKeyPressed);
+    };
+  }, [handleKeyPressed, handlePreviousImage, handleNextImage]);
+  
   return (
     <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-70">
       <div
@@ -71,6 +90,7 @@ const ImageSlider = ({ currentId, handleImageClick }) => {
         <button
           className="absolute top-2 right-4 text-white text-lg"
           onClick={handleImageClick}
+          onKeyDown={handleKeyPressed}
         >
           &#10005;
         </button>
@@ -90,12 +110,14 @@ const ImageSlider = ({ currentId, handleImageClick }) => {
         <button
           className="absolute left-2 top-1/2"
           onClick={handlePreviousImage}
+          onKeyDown={handleKeyPressed}
         >
           <img className="h-8" src={previous} alt="previous" />
         </button>
         <button
           className="absolute right-2 top-1/2"
           onClick={handleNextImage}
+          onKeyDown={handleKeyPressed}
         >
           <img className="h-8" src={next} alt="next" />
         </button>
