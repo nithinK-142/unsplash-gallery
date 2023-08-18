@@ -10,7 +10,7 @@ const Image = ({ data }) => {
 
   useEffect(() => {
     document.body.style.overflow = modalStatus ? 'hidden' : 'unset';
-    document.body.style.paddingRight = modalStatus ? '15px' : '0px';
+    document.body.style.paddingRight = modalStatus ? '10px' : '0px';
   }, [modalStatus]);
   
 

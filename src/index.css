@@ -4,7 +4,7 @@
 
 /* Browser's scroll bar modifications */
 ::-webkit-scrollbar {
-    width: 12px; 
+    width: 10px; 
     background-color: #202324 !important;
   }
   
