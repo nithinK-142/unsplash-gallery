@@ -9,6 +9,7 @@ export const ImageContext = createContext();
 
 function App() {
   const [searchText, setSearchText] = useState('');
+  const [resultStatus, setResultStatus] = useState('');
   const { response, isLoading, error, fetchData } = useAxios(`search/photos?page=1&query=puppy&client_id=${import.meta.env.VITE_ACCESS_KEY}`);
 
   const value = {
@@ -17,7 +18,9 @@ function App() {
     error, 
     fetchData,
     searchText, 
-    setSearchText
+    setSearchText,
+    resultStatus,
+    setResultStatus
   }
   return (
   <>
@@ -26,8 +29,8 @@ function App() {
         <Search/>
       </NavBar>
       <Images/>
+      <Footer />
     </ImageContext.Provider>
-    <Footer />
   </>
   );
 }
