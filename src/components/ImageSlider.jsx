@@ -67,11 +67,14 @@ const ImageSlider = ({ currentId, handleImageClick }) => {
     if (e.keyCode === 37) {
       handlePreviousImage();
     }
-    if (e.keyCode === 39) {
+    if (e.keyCode === 39 || e.keyCode === 32) {
       handleNextImage();
     }
     if (e.keyCode === 27) {
       handleImageClick();
+    }
+    if (e.keyCode === 13) {
+      switchScreenMode();
     }
   };
 
@@ -97,6 +100,7 @@ const ImageSlider = ({ currentId, handleImageClick }) => {
         <button
           className="absolute top-2 right-12 text-white text-lg ml-px"
           onClick={switchScreenMode}
+          onKeyDown={handleKeyPressed}
         >
           &#x26F6;
         </button>
