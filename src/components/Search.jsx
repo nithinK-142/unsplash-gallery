@@ -1,17 +1,19 @@
 import { useContext, useState } from "react"
 import { ImageContext } from "../App";
+import Orientation from "./Orientation";
 
 const Search = () => {
 
   const [searchValue, setSearchValue] = useState("");
   const { fetchData, setSearchText } = useContext(ImageContext);
+  const orientation = Orientation(); 
 
   const handleInputChange = (e) => {
     setSearchValue(e.target.value);
   } 
 
   const searchFunction = () => {
-    fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_ACCESS_KEY}`);
+    fetchData(`search/photos?page=1&query=${searchValue}&client_id=${import.meta.env.VITE_ACCESS_KEY}&orientation=${orientation}`);
     setSearchValue("");
     setSearchText(searchValue);
   }
