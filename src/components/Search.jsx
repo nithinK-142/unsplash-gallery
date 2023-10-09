@@ -25,7 +25,7 @@ const Search = () => {
     e.key === 'Enter' ? searchFunction() : undefined;
   }
   return (
-    <div className="mt-5 flex font-normal mx-5">
+    <div className="flex mx-5 mt-5 font-normal">
         <input 
         className="bg-gray-50 border outline-none border-grey-300 text-black text-sm w-full h-1/2 indent-2 p-2.5 outline:none focus:border-blue-500 focus:ring-2 rounded-tl rounded-bl" 
         type="search" 

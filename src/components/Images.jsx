@@ -15,16 +15,16 @@ const Images = () => {
     <div>
       {checkResponse ? (
         <div>
-          <h2 className='text-center mt-6 underline text-2xl'>
+          <h2 className='mt-6 text-2xl text-center underline'>
             Results for {searchText || 'puppy'}
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 my-10 max-w-7xl mx-auto px-4">
+          <div className="grid gap-4 px-4 mx-auto my-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 max-w-7xl">
             {!isLoading ? response.map((data, key) => <Image key={key} data={data} />) : <Skeleton item={10} />}
           </div>
         </div>
       ) : (
         <div>
-          <h2 className='text-center mt-6 underline text-red-600 text-2xl'>
+          <h2 className='mt-6 text-2xl text-center text-red-600 underline'>
             No results for {searchText}
           </h2>
         </div>

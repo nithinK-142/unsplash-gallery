@@ -18,7 +18,7 @@ const Image = ({ data }) => {
     <>
       <div>
         <img
-          className="h-72 w-full object-cover rounded-lg shadow-md cursor-pointer"
+          className="object-cover w-full rounded-lg shadow-md cursor-pointer h-72"
           src={data.urls.small}
           alt={data.alt_description}
           onClick={handleImageClick}

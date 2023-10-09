@@ -2,7 +2,7 @@ import React from "react";
 
 const ImageIndicators = ({ jsonData, activeIndicator, handleIndicatorClick }) => {
   return (
-    <div className="flex justify-center mt-4 absolute bottom-4 left-1/2 transform -translate-x-1/2">
+    <div className="absolute flex justify-center mt-4 transform -translate-x-1/2 bottom-4 left-1/2">
       {jsonData.map((_, index) => (
         <button
           key={index}

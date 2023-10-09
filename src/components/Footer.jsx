@@ -14,7 +14,7 @@ const Footer = () => {
       className={`w-full bg-[#3d4d49] py-4 flex items-center justify-center ${noResultsCSS}`}
     >
         <p
-          className='text-white text-base font-semibold'
+          className='text-base font-semibold text-white'
         >Copyright &copy; 2023 Unsplash Gallery</p>
     </div>
   )
